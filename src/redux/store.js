@@ -20,6 +20,7 @@ export default configureStore({
     studiolisting:ListingSlice,
     register:RegSlice,
     login:loginslice,
-    book:neww
+    book:neww,
+    
   }
 })
