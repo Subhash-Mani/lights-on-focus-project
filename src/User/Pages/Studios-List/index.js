@@ -179,7 +179,7 @@ const Filterbtn =(event)=>{
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
-                      <h3 className="card-title">{each.studio_name}</h3>
+                      <h3 className="card-title">{each.name}</h3>
                       <h5 className="card-title">{each.city}</h5>
                       <h5 className="card-title">{each.phone}</h5>
                     <button class="btn btn-facebook" onClick={()=>Viewlist(each.id)}>view</button>

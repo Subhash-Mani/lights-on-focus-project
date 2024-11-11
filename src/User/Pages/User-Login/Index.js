@@ -55,8 +55,17 @@ export const User_Login = () => {
                <div className="page-header-image" style={{backgroundImage:"url(../assets/img/pexels-bertellifotografia-2376991.jpg)"}}></div>
                <nav class="navbar navbar-expand-lg navbar-transparent">
               <div class="container">
+              <div className="dropdown button-dropdown">
+                        <a href="#pablo" className="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                            <span className="button-bar"></span>
+                            <span className="button-bar"></span>
+                            <span className="button-bar"></span>
+                        </a>
+                    </div>
                 <div class="navbar-translate">
-                  <a class="navbar-brand" href="#pablo">Lights On Focus</a>
+                <a className="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit-pro/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+                            LIGHTS ON FOCUS
+                        </a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-navbar-transparent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar bar1"></span>
                     <span class="navbar-toggler-bar bar2"></span>
@@ -67,8 +76,8 @@ export const User_Login = () => {
                   <ul class="navbar-nav ml-auto">
                            <li>
                         <div  aria-labelledby="navbarDropdownMenuLink">
-                          <Link to="studio/login" className="text-light m-3">Studio</Link>
-                          <Link to="admin/login" className="text-light m-4">Admin</Link>
+                          <Link to="studio/login" className="text-light m-3"  >Studio</Link>
+                          <Link to="admin/login" className="text-light m-4" >Admin</Link>
                         </div>
                       </li>
                   </ul>

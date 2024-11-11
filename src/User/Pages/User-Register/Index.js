@@ -66,6 +66,13 @@ export const User_Register = () => {
 
             <nav className="navbar navbar-expand-lg bg-white navbar-absolute navbar-transparent">
                 <div className="container">
+                <div className="dropdown button-dropdown">
+                        <a href="#pablo" className="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                            <span className="button-bar"></span>
+                            <span className="button-bar"></span>
+                            <span className="button-bar"></span>
+                        </a>
+                    </div>
                     <div className="navbar-translate">
                         <a className="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit-pro/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
                             {/* <h3>PORTFOLIO</h3> */}
@@ -102,7 +109,7 @@ export const User_Register = () => {
             {/* <!-- End Navbar --> */}
 
             <div className="page-header header-filter" filter-color="black">
-                <div className="page-header-image" style={{ backgroundImage: "url(../assets/img/pexels-umaraffan499-22185.jpg)"}}></div>
+                <div className="page-header-image" style={{ backgroundImage: "url(../assets/img/bg9.jpg)",opacity:"0.9"}}></div>
                 <div className="content w-800">
                     <div className="container">
                         <div className="row">
@@ -110,20 +117,23 @@ export const User_Register = () => {
                             <div className="col-md-4 m-auto p-3  ">
                                 {/* <div className="card card-signup ">
                                     <div className="card-body  cardsize" > */}
-                                        <h2 className="card-title text-center p-2"  >User Register</h2>
+                                        <h2 className="card-title text-center p-2" style={{color:"",
+                                    fontFamily:"helvitica",
+                                    marginBottom:"10px",
+                                    paddingTop:"0px"}} > User Register</h2>
 
                                         <div className="input-group no-border input-lg ">
                                             <div className="input-group-prepend">
                                                 <span className="input-group-text"></span>
                                             </div>
-                                            <input type="text" className="form-control bg-dark text-light" onKeyUp={(e) => dispatch(details({ ...uservalue, name: e.target.value }))} placeholder="Name" requried />
+                                            <input type="text" className="form-control bg-transparent border border-light text-light" onKeyUp={(e) => dispatch(details({ ...uservalue, name: e.target.value }))} placeholder="Name" requried />
                                         </div>
                                         <div className="input-group no-border input-lg">
                                             <div className="input-group-prepend">
                                                 <span className="input-group-text border border-dark"></span>
                                             </div>
                                             {/* <input type="email" className="form-control" onKeyUp={(e)=>dispatch(details({...uservalue,email:e.target.value}))} placeholder="Email" /> */}
-                                            <input type="email" className="form-control bg-dark text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, email: e.target.value }))} placeholder="email"  requried />
+                                            <input type="email" className="form-control bg-transparent border border-light text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, email: e.target.value }))} placeholder="email"  requried />
 
                                         </div>
 
@@ -143,44 +153,44 @@ export const User_Register = () => {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"></span>
                                                 </div>
-                                                <input type="password" className="form-control bg-dark text-light" onKeyUp={(e) => dispatch(details({ ...uservalue, password: e.target.value }))} placeholder="password"  requried />
+                                                <input type="password" className="form-control bg-transparent border border-light text-light" onKeyUp={(e) => dispatch(details({ ...uservalue, password: e.target.value }))} placeholder="password"  requried />
                                         </div>
                                         <div className="input-group no-border input-lg">
                                             <div className="input-group-prepend">
                                                 <span className="input-group-text"></span>
                                             </div>
-                                            <input type="number" className="form-control bg-dark text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, aadhar: e.target.value }))} placeholder="Aaadhar number"  requried />
+                                            <input type="number" className="form-control bg-transparent border border-light text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, aadhar: e.target.value }))} placeholder="Aaadhar number"  requried />
                                         </div>
 
                                         <div className="input-group no-border input-lg">
                                             <div className="input-group-prepend">
                                                 <span className="input-group-text"></span>
                                             </div>
-                                            <input type="text" className="form-control bg-dark text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, address: e.target.value }))} placeholder="Address"  requried />
+                                            <input type="text" className="form-control bg-transparent border border-light text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, address: e.target.value }))} placeholder="Address"  requried />
                                         </div>
                                         <div className="input-group no-border input-lg">
                                             <div className="input-group-prepend">
                                                 <span className="input-group-text"></span>
                                             </div>
-                                            <input type="number" className="form-control bg-dark text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, phone: e.target.value }))} placeholder="Phone Number"  requried />
+                                            <input type="number" className="form-control bg-transparent border border-light text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, phone: e.target.value }))} placeholder="Phone Number"  requried />
                                         </div>
                                         <div className="input-group no-border input-lg">
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text"></span>
                                                 </div>
-                                                <input type="text" className="form-control bg-dark text-light " onKeyUp={(e)=>dispatch(details({...uservalue,city:e.target.value}))} placeholder="city"  requried/>
+                                                <input type="text" className="form-control bg-transparent border border-light text-light " onKeyUp={(e)=>dispatch(details({...uservalue,city:e.target.value}))} placeholder="city"  requried/>
                                             </div>
                                         <div className="input-group no-border input-lg">
                                             <div className="input-group-prepend">
                                                 <span className="input-group-text"></span>
                                             </div>
-                                            <input type="text" className="form-control bg-dark text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, area: e.target.value }))} placeholder="Area" requried />
+                                            <input type="text" className="form-control bg-transparent border border-light text-light " onKeyUp={(e) => dispatch(details({ ...uservalue, area: e.target.value }))} placeholder="Area" requried />
                                         </div>
                                         <div className="input-group no-border input-lg">
                                             <div className="input-group-prepend">
                                                 <span className="input-group-text"></span>
                                             </div>
-                                            <input type="number" className="form-control bg-dark text-light" onKeyUp={(e) => dispatch(details({ ...uservalue, pin: e.target.value }))} placeholder="Pincode"  requried />
+                                            <input type="number" className="form-control bg-transparent border border-light text-light" onKeyUp={(e) => dispatch(details({ ...uservalue, pin: e.target.value }))} placeholder="Pincode"  requried />
                                         </div>
                                         <div className="p-2">
                                             <button className="btn btn-success " onClick={register}style={{color:"",

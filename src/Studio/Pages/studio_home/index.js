@@ -20,7 +20,7 @@ export const Studio_home = () => {
     const [order, setorder] = useState([])
     const[search,setsearch]=useState([order])
     const[searchbar,setsearchbar]=useState({date:""})
-   console.log(order)
+   console.log(search)
 
     
     // ----------------------------------------------------------------------------
@@ -65,7 +65,7 @@ export const Studio_home = () => {
     const orderlist = () => {
         // axios.get(`https://agaram.academy/api/action.php?request=studio_getBookingDetails&studio_id=${logup.data.id}`).then((n) => {
             // axios.get("https://agaram.academy/api/action.php?request=studio_getBookingDetails").then((n) => {
-                axios.get("https://subhashs.pythonanywhere.com/bookinglist").then((n) => {
+                axios.get(`https://subhashs.pythonanywhere.com/bookinglist/${logup.data.id}`).then((n) => {
 
            console.log(n.data.data)
             setorder(n.data)
@@ -367,7 +367,7 @@ export const Studio_home = () => {
                                     </tr>
                                 </thead>
                                 <tbody  >
-                                    {search.map((each) =>
+                                    {search.length>0?search.map((each) =>
 
                                         <tr className="table my-3">
                                             {/* {ordername.map((n) =>
@@ -390,7 +390,7 @@ export const Studio_home = () => {
 
 
                                         </tr>
-                                    )}
+                                    ):""}
                                 </tbody>
                             </table>
 

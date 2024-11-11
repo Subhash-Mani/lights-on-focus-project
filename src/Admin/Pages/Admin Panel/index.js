@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState} from "react"
-import {  useNavigate } from "react-router-dom"
-import { Link  } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom"
+
 
 
 
@@ -9,8 +9,9 @@ export const Admin_Panel=()=>{
     
 
     const[userList,setUserList]=useState([])
+    const[userData,setUserData]=useState([])
     const[record,setrecord]=useState(userList)
-    const[studio,setstudio]=useState(userList)
+    const[studio,setstudio]=useState(userData)
     
         const navigate=useNavigate();
         const Display=()=>{
@@ -24,19 +25,19 @@ export const Admin_Panel=()=>{
     
         }
         const Filter=(event)=>{
-            setrecord(userList.filter(e=>e.name.toLowerCase().includes(event.target.value)))
+            setrecord(userList.filter(e=>e.name?.toLowerCase().includes(event.target.value.toLowerCase())))
           }
         
     const Deletelist=(idvalue)=>{
 
         axios.delete(`https://subhashs.pythonanywhere.com/delete/${idvalue}`).then((value)=>{
-            console.log(value)
+           
             Display()
         })
         }
          
         const Viewlist=(idvalue)=>{
-            navigate(`/user/view/${idvalue}`)
+            navigate(`/admin/userview/${idvalue}`)
             }
 
         useEffect(()=>{
@@ -47,7 +48,7 @@ export const Admin_Panel=()=>{
 
         const Studio=()=>{
             axios.get("https://subhashs.pythonanywhere.com/studiolist").then((datavalue)=>{
-                setUserList(datavalue.data)
+                setUserData(datavalue.data)
                 setstudio(datavalue.data)
                 // console.log(datavalue)
     
@@ -55,20 +56,20 @@ export const Admin_Panel=()=>{
     
         }
         const Search=(event)=>{
-            setstudio(record.filter(e=>e.name.toLowerCase().includes(event.target.value)))
+            setstudio(userData.filter(e=>e.name?.toLowerCase().includes(event.target.value.toLowerCase())))
           }
         
     const Delete=(idvalue)=>{
 
         axios.delete(`https://subhashs.pythonanywhere.com/deletes/${idvalue}`).then((val)=>{
-            console.log(val)
+          
 
             Studio()
         })
         }
          
         const View=(idvalue)=>{
-            navigate(`/studio/view/${idvalue}`)
+            navigate(`/admin/studioview/${idvalue}`)
             }
 
         useEffect(()=>{
@@ -80,8 +81,10 @@ export const Admin_Panel=()=>{
 
 
     return(
-        <>
-        <nav class="navbar navbar-expand-lg bg-primary ">
+        
+        <div className="index-page sidebar-collapse">
+
+<nav class="navbar navbar-expand-lg bg-primary ">
               <div class="container">
               <div className="dropdown button-dropdown">
                         <a href="#pablo" className="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
@@ -100,13 +103,6 @@ export const Admin_Panel=()=>{
                 </div>
                 <div class="collapse navbar-collapse" id="example-navbar-primary">
                   <ul class="navbar-nav ml-auto">
-                    
-                  {/* <li class="nav-item">
-                      <a class="nav-link" href="#pablo">
-                        <Link to={"/"} className="back"><i class="now-ui-icons users_circle-08"></i> Edit profile</Link>
-                      </a>
-                    </li> */}
-
                     <li class="nav-item">
                       <a class="nav-link" href="#pablo">
                         <Link to={"/admin/login"} className="back"><i class="now-ui-icons arrows-1_share-66"></i> logout</Link>
@@ -118,12 +114,9 @@ export const Admin_Panel=()=>{
               </div>
             </nav>
 
-
-            
-        <div className="index-page sidebar-collapse">
              <div className="col-md-10 ml-auto col-xl-6 mr-auto m-5">
               <div className="card">
-                <div className="card-header">
+              <div className="card-header">
                   <ul className="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist" data-background-color="orange">
                     
                     <li className="nav-item">
@@ -201,7 +194,7 @@ export const Admin_Panel=()=>{
                 </div>
               </div>
             </div>
-            </>
+      
     )
 
-}
+  }

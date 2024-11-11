@@ -66,7 +66,7 @@ export const Book_Details = () => {
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
                     <a className="nav-link">
-                      <Link to="/" className='text-light'>Home</Link>
+                      <Link to="user/studiolist" className='text-light'>Home</Link>
 
                     </a>
                   </li>
