@@ -32,6 +32,8 @@ export const Studio_Login = () => {
                 alert("login sucessfully")
                 navigate("/Studio/home")
                 dispatch(userlog(n.data))
+                localStorage.setItem("studio_token",n.data.data.studio_token)
+
 
             } else {
                 alert("login failed")
@@ -48,6 +50,9 @@ export const Studio_Login = () => {
 
     return (
         <div className="login-page sidebar-collapse">
+            <div className="page-header header-filter" filter-color="orange">
+            <div className="page-header-image" style={{ backgroundImage: "url(../assets/img/back3.jpg)" }}></div>
+            
             <nav className="navbar navbar-expand-lg bg-white fixed-top navbar-transparent" color-on-scroll="500">
                 <div className="container">
                     <div className="dropdown button-dropdown">
@@ -81,8 +86,7 @@ export const Studio_Login = () => {
                 </div>
             </nav>
             {/* // <!-- End Navbar --> */}
-            <div className="page-header header-filter" filter-color="orange">
-                <div className="page-header-image" style={{ backgroundImage: "url(../assets/img/back3.jpg)" }}></div>
+            
                 <div className="content" style={{marginBottom:"22.5px"}} >
                     <div className="container">
                         <div className="col-md-5 ml-auto mr-auto">

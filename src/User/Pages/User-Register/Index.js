@@ -63,6 +63,8 @@ export const User_Register = () => {
     return (
         <div class="signup-page sidebar-collapse">
             {/* <form onSubmit={handleSubmit}> */}
+            <div className="page-header header-filter" filter-color="black">
+                <div className="page-header-image" style={{ backgroundImage: "url(../assets/img/bg9.jpg)",opacity:"0.9"}}></div>
 
             <nav className="navbar navbar-expand-lg bg-white navbar-absolute navbar-transparent">
                 <div className="container">
@@ -108,8 +110,7 @@ export const User_Register = () => {
 
             {/* <!-- End Navbar --> */}
 
-            <div className="page-header header-filter" filter-color="black">
-                <div className="page-header-image" style={{ backgroundImage: "url(../assets/img/bg9.jpg)",opacity:"0.9"}}></div>
+            
                 <div className="content w-800">
                     <div className="container">
                         <div className="row">

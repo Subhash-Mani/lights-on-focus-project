@@ -1,4 +1,3 @@
-
 import { Admin_Login } from './Admin/Pages/Admin-Login/Index';
 import './App.css';
 import { User_Login } from './User/Pages/User-Login/Index';
@@ -15,8 +14,18 @@ import { Book_Details } from './User/Pages/Book_details';
 import { View_Details } from './User/Pages/View_details';
 import { Studio_Login } from './Studio/Pages/Studio-Login/Index';
 import { Studio_View } from './Admin/Pages/studio view';
+import { Navigate } from "react-router-dom";
 
-
+// const token=localStorage.getItem('user_token')  
+ 
+// const ProtectedRoute = ({ element }) => { 
+//   if (token==null) { 
+//     return <Navigate to="/user/login"/> 
+//   } 
+//   else{ 
+//     return element 
+//   } 
+// };
 
 const router = createBrowserRouter([
   {
@@ -46,7 +55,7 @@ const router = createBrowserRouter([
 
   {
     path:"/admin/panel",
-    element: <div><Admin_Panel/></div>
+    element:<div><Admin_Panel/></div>
   },
   {
     path:"/user/view/:id",

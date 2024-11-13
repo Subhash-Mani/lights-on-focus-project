@@ -63,6 +63,10 @@ export const Studio_Register = () => {
         
         <form >
         <div className="login-page sidebar-collapse">
+        <div className="page-header header-filter" filter-color="">
+            <div className="page-header-image" style={{ backgroundImage: "url(../assets/img/back.jpg)",
+                opacity:"0.9"
+             }}></div>
         <nav className="navbar navbar-expand-lg bg-white fixed-top navbar-transparent" color-on-scroll="500">
             <div className="container">
                 <div className="dropdown button-dropdown">
@@ -100,10 +104,7 @@ export const Studio_Register = () => {
             </div>
         </nav>
         {/* // <!-- End Navbar --> */}
-        <div className="page-header header-filter" filter-color="">
-            <div className="page-header-image" style={{ backgroundImage: "url(../assets/img/back.jpg)",
-                opacity:"0.9"
-             }}></div>
+       
             <div className="content">
                 <div className="container ml-10">
                      

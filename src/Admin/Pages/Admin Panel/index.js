@@ -14,9 +14,14 @@ export const Admin_Panel=()=>{
     const[studio,setstudio]=useState(userData)
     
         const navigate=useNavigate();
+        
+        let admin_token = localStorage.getItem('admin_token')
+
+        const headers = {'Authorization':`Bearer ${admin_token}`}
+
         const Display=()=>{
 
-            axios.get("https://subhashs.pythonanywhere.com/users").then((datavalue)=>{
+            axios.get("https://subhashs.pythonanywhere.com/users",{headers}).then((datavalue)=>{
                 setUserList(datavalue.data)
                 setrecord(datavalue.data)
                 // console.log(datavalue)
@@ -37,7 +42,7 @@ export const Admin_Panel=()=>{
         }
          
         const Viewlist=(idvalue)=>{
-            navigate(`/admin/userview/${idvalue}`)
+            navigate(`/user/view/${idvalue}`)
             }
 
         useEffect(()=>{
@@ -47,7 +52,7 @@ export const Admin_Panel=()=>{
 
 
         const Studio=()=>{
-            axios.get("https://subhashs.pythonanywhere.com/studiolist").then((datavalue)=>{
+            axios.get("https://subhashs.pythonanywhere.com/studiolist",{headers}).then((datavalue)=>{
                 setUserData(datavalue.data)
                 setstudio(datavalue.data)
                 // console.log(datavalue)
@@ -69,7 +74,7 @@ export const Admin_Panel=()=>{
         }
          
         const View=(idvalue)=>{
-            navigate(`/admin/studioview/${idvalue}`)
+            navigate(`/studio/view/${idvalue}`)
             }
 
         useEffect(()=>{

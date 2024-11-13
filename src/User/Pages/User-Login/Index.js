@@ -34,6 +34,8 @@ export const User_Login = () => {
                 // alert("login successfull")
                 dispatch(log(res.data.data))
                 navigate("/user/studiolist")
+                localStorage.setItem("user_token",res.data.data.user_token)
+
               }
               else{
                 alert("login failed")

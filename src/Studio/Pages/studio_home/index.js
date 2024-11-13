@@ -14,7 +14,11 @@ export const Studio_home = () => {
     const dispatch = useDispatch();
     const [packages, setPackages] = useState({ name: "", amount: "" })
 
-    
+
+    let studio_token = localStorage.getItem('studio_token')
+
+    const headers = {'Authorization':`Bearer ${studio_token}`}
+
     // --------------------------------------------------------------------------
 
     const [order, setorder] = useState([])
@@ -44,7 +48,7 @@ export const Studio_home = () => {
         formData.append("studio_id",logup.data.id)
 
         // axios.post("https://agaram.academy/api/action.php?request=studio_update_profile", formData).then((e) => {
-        axios.put("https://subhashs.pythonanywhere.com/edit",formData).then((e) => {
+        axios.put("https://subhashs.pythonanywhere.com/edit",formData,{headers}).then((e) => {
 
             // console.log(e)
             alert("upload profile sucessfully")
@@ -65,11 +69,11 @@ export const Studio_home = () => {
     const orderlist = () => {
         // axios.get(`https://agaram.academy/api/action.php?request=studio_getBookingDetails&studio_id=${logup.data.id}`).then((n) => {
             // axios.get("https://agaram.academy/api/action.php?request=studio_getBookingDetails").then((n) => {
-                axios.get(`https://subhashs.pythonanywhere.com/bookinglist/${logup.data.id}`).then((n) => {
+                axios.get(`https://subhashs.pythonanywhere.com/bookinglist/${logup.data.id}`,{headers}).then((n) => {
 
            console.log(n.data.data)
-            setorder(n.data)
-            setsearch(n.data)
+            setorder(n.data.data)
+            setsearch(n.data.data)
             
         })
     }
